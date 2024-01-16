@@ -1,0 +1,66 @@
+name: Config Update
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 10 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: "Setup sing-box"
+      env:
+        SING_BOX_DEB_URL: "https://github.com/SagerNet/sing-box/releases/download/v1.8.1/sing-box_1.8.1_linux_amd64.deb"
+      run: |
+          set -Eeuo pipefail
+          wget -O sing-box.deb $SING_BOX_DEB_URL
+          sudo dpkg -i sing-box.deb
+
+    - name: Set up Python3
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas requests pyyaml
+
+    - name: Run script
+      run: python ../convert.py
+      working-directory: ./data/
+
+    - name: Archive files
+      run: tar -cvf ./data/rules_archive.tar --exclude="*.tar" -C ./data/ .
+
+    - name: Move files to rule_json and rule_srs
+      run: |
+        mkdir -p ./rule_json/
+        mkdir -p ./rule_srs/
+        tar --wildcards -xvf ./data/rules_archive.tar -C ./rule_json/ '*.json'
+        tar --wildcards -xvf ./data/rules_archive.tar -C ./rule_srs/ '*.srs'
+
+    - name: Commit and push config.json
+      run: |
+        git config --global user.email "action@github.com"
+        git config --global user.name "GitHub Action"
+        git add ./data/rules_archive.tar
+        git add ./rule_json/*.json
+        git add ./rule_srs/*.srs
+
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+          exit 0
+        else
+          git commit -m "Update rules"
+          git push
+        fi
