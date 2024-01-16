@@ -1,0 +1,377 @@
+{
+  "log": {
+    "level": "info",
+    "timestamp": true
+  },
+  "experimental": {
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090",
+      "external_ui": "ui",
+      "secret": "",
+      "default_mode": "rule"
+    },
+  "cache_file": {
+    "enabled": true,
+    "store_fakeip": false
+    }
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "proxyDns",
+        "address":  "https://1.1.1.1/dns-query",
+        "detour": "AUTO"
+      },
+      {
+        "tag": "localDns",
+        "address": "https://223.6.6.6/dns-query",
+        "detour": "direct"
+      },
+      {
+        "tag": "block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": "anti-AD.srs",
+        "server": "block"
+      },
+      {
+        "outbound": "any",
+        "server": "localDns",
+        "disable_cache": true
+      },
+      {
+        "rule_set": "ChinaMax_All",
+        "server": "localDns"
+      },   
+      {
+        "clash_mode": "direct",
+        "server": "localDns"
+      },
+      {
+        "clash_mode": "global",
+        "server": "proxyDns"
+      }
+    ],
+    "final": "proxyDns"
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "inet4_address": "172.19.0.1/30",
+      "inet6_address": "fdfe:dcba:9876::1/126",
+      "auto_route": true,
+      "sniff": true,
+      "stack": "system",
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 2080
+        }
+      }
+    },
+    {
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 2080,
+      "sniff": true,
+      "users": []
+    }
+  ],
+  "outbounds": [
+    {
+      "tag":"AUTO",
+      "type":"urltest",
+      "outbounds":[
+        "server-1",
+        "server-2"
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 100
+    },
+    {
+      "tag":"AdBlock",
+      "type":"selector",
+      "outbounds":[
+        "block",
+        "direct"
+      ]
+    },
+    {
+      "tag":"OpenAI",
+      "type":"selector",
+      "outbounds":[
+        "direct",
+        "server-1",
+        "server-2"
+      ]
+    },
+    {
+      "tag":"Telegram",
+      "type":"selector",
+      "outbounds":[
+        "direct",
+        "server-1",
+        "server-2"
+      ]
+    },
+    {
+      "tag":"Youtube",
+      "type":"selector",
+      "outbounds":[
+        "direct",
+        "server-1",
+        "server-2"
+      ]
+    },
+    {
+      "tag":"Microsoft",
+      "type":"selector",
+      "outbounds":[
+        "direct",
+        "server-1",
+        "server-2"
+      ]
+    },
+    {
+      "tag":"G-Services",
+      "type":"selector",
+      "outbounds":[
+        "direct",
+        "server-1",
+        "server-2"
+      ]
+    },
+    {
+      "tag":"Metaverse",
+      "type":"selector",
+      "outbounds":[
+        "direct",
+        "server-1",
+        "server-2"
+      ]
+    },
+    {
+      "tag":"China",
+      "type":"selector",
+      "outbounds":[
+        "direct",
+        "server-1",
+        "server-2"
+      ]
+    },
+    {
+      "tag": "server-1",
+      "type": "trojan",
+      "server": "your server.com",
+      "server_port": 443,
+      "password": "your password",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "your server.com"
+      }
+    },
+    {
+      "tag": "server-2",
+      "type": "tuic",
+      "server": "your server.com",
+      "server_port": 12345,
+      "uuid": "your uuid",
+      "password": "your password",
+      "congestion_control": "bbr",
+      "tls": {
+          "enabled": true,
+          "server_name": "your server.com",
+          "alpn": [
+              "h3"
+          ]
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "protocol": "dns",
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "global",
+        "outbound": "Metaverse"
+      },
+      {
+        "domain": [
+          "clash.razord.top",
+          "yacd.metacubex.one",
+          "yacd.haishan.me",
+          "d.metacubex.one"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "domain": [
+          "cmpassport.com",
+          "hmrz.wo.cn",
+          "nishub1.10010.com",
+          "enrichgw.10010.com",
+          "wostore.cn",
+          "wosms.cn",
+          "mail.wo.cn",
+          "open.wo.cn",
+          "id6.me",
+          "163yun.com"
+        ],
+        "outbound": "AdBlock"
+      },
+      {
+        "domain_suffix": [
+          ".cmpassport.com",
+          ".hmrz.wo.cn",
+          ".nishub1.10010.com",
+          ".enrichgw.10010.com",
+          ".wostore.cn",
+          ".wosms.cn",
+          ".mail.wo.cn",
+          ".open.wo.cn",
+          ".id6.me",
+          ".163yun.com"
+        ],
+        "outbound": "AdBlock"
+      },
+      {
+        "rule_set": "anti-AD.srs",
+        "outbound": "AdBlock"
+      },
+      {
+        "rule_set": "OpenAI.srs",
+        "outbound": "OpenAI"
+      },
+      {
+        "rule_set": "Telegram.srs",
+        "outbound": "Telegram"
+      },
+      {
+        "rule_set": "YouTube.srs",
+        "outbound": "Youtube"
+      },
+      {
+        "rule_set": "Microsoft.srs",
+        "outbound": "Microsoft"
+      },
+      {
+        "rule_set": "Google.srs",
+        "outbound": "G-Services"
+      },
+      {
+        "rule_set": "Global_All",
+        "outbound": "Metaverse"
+      },
+      {
+        "rule_set": ["ChinaMax_All","WeChat.srs"],
+        "outbound": "China"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "China"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "China"
+      }
+    ],
+    "auto_detect_interface": true,
+    "final": "Metaverse",
+    "rule_set": [
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "AUTO"
+      },
+      {
+        "tag": "anti-AD.srs",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/tangnahuaite/sing-box_Route-rules/main/rule_srs/anti-ad-surge.srs",
+        "download_detour": "AUTO"
+      },
+      {
+        "tag": "ChinaMax_All",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/tangnahuaite/sing-box_Route-rules/main/rule_srs/ChinaMax_All.srs",
+        "download_detour": "AUTO"
+      },
+      {
+        "tag": "Global_All",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/tangnahuaite/sing-box_Route-rules/main/rule_srs/Global_All.srs",
+        "download_detour": "AUTO"
+      },
+      {
+        "tag": "Google.srs",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/tangnahuaite/sing-box_Route-rules/main/rule_srs/Google.srs",
+        "download_detour": "AUTO"
+      },
+      {
+        "tag": "Microsoft.srs",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/tangnahuaite/sing-box_Route-rules/main/rule_srs/Microsoft.srs",
+        "download_detour": "AUTO"
+      },
+      {
+        "tag": "OpenAI.srs",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/tangnahuaite/sing-box_Route-rules/main/rule_srs/OpenAI.srs",
+        "download_detour": "AUTO"
+      },
+      {
+        "tag": "Telegram.srs",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/tangnahuaite/sing-box_Route-rules/main/rule_srs/Telegram.srs",
+        "download_detour": "AUTO"
+      },
+      {
+        "tag": "WeChat.srs",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/tangnahuaite/sing-box_Route-rules/main/rule_srs/WeChat.srs",
+        "download_detour": "AUTO"
+      },
+      {
+        "tag": "YouTube.srs",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/tangnahuaite/sing-box_Route-rules/main/rule_srs/YouTube.srs",
+        "download_detour": "AUTO"
+      }
+    ]
+  }
+}
