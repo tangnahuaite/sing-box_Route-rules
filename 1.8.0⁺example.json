@@ -60,9 +60,13 @@
   "inbounds": [
     {
       "type": "tun",
+      "tag": "tun-in",
+      "interface_name": "tun0",
       "inet4_address": "172.19.0.1/30",
       "inet6_address": "fdfe:dcba:9876::1/126",
+      "mtu": 1500,
       "auto_route": true,
+      "strict_route": true,
       "sniff": true,
       "stack": "system",
       "platform": {
@@ -75,6 +79,7 @@
     },
     {
       "type": "mixed",
+      "tag": "mixed-in",
       "listen": "127.0.0.1",
       "listen_port": 2080,
       "sniff": true,
