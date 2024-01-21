@@ -1,0 +1,71 @@
+{
+  "rules": [
+    {
+      "domain": [
+        "114dev.com",
+        "163yun.com",
+        "253.com",
+        "api.msn.cn",
+        "api.msn.com",
+        "assets.msn.cn",
+        "assets.msn.com",
+        "browser.events.data.msn.cn",
+        "browser.events.data.msn.com",
+        "c.msn.cn",
+        "c.msn.com",
+        "client.wns.windows.com",
+        "cmpassport.com",
+        "e.189.cn",
+        "enrichgw.10010.com",
+        "geetest.com",
+        "global.asimov.events.data.trafficmanager.net",
+        "hmrz.wo.cn",
+        "icitymobile.mobi",
+        "id6.me",
+        "img-s-msn-com.akamaized.net",
+        "jegotrip.com.cn",
+        "mail.wo.cn",
+        "miwifi.com",
+        "nishub1.10010.com",
+        "nisportal.10010.com",
+        "ntp.msn.cn",
+        "ntp.msn.com",
+        "onedscolprdcus10.centralus.cloudapp.azure.com",
+        "open.wo.cn",
+        "passport.baidu.com",
+        "pipe.aria.microsoft.cn",
+        "pipe.aria.microsoft.com",
+        "web.vortex.data.microsoft.cn",
+        "web.vortex.data.microsoft.com",
+        "wosms.cn",
+        "wostore.cn",
+        "www.msn.cn",
+        "www.msn.com",
+        "zt.baidu.com"
+      ]
+    },
+    {
+      "domain_suffix": [
+        ".114dev.com",
+        ".163yun.com",
+        ".253.com",
+        ".cmpassport.com",
+        ".e.189.cn",
+        ".enrichgw.10010.com",
+        ".geetest.com",
+        ".hmrz.wo.cn",
+        ".icitymobile.mobi",
+        ".id6.me",
+        ".jegotrip.com.cn",
+        ".mail.wo.cn",
+        ".miwifi.com",
+        ".nishub1.10010.com",
+        ".nisportal.10010.com",
+        ".open.wo.cn",
+        ".wosms.cn",
+        ".wostore.cn"
+      ]
+    }
+  ],
+  "version": 1
+}
