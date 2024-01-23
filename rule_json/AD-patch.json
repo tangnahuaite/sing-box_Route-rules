@@ -21,7 +21,6 @@
         "geetest.com",
         "global.asimov.events.data.trafficmanager.net",
         "hmrz.wo.cn",
-        "icitymobile.mobi",
         "id6.me",
         "img-s-msn-com.akamaized.net",
         "mail.wo.cn",
@@ -31,7 +30,6 @@
         "ntp.msn.com",
         "onedscolprdcus10.centralus.cloudapp.azure.com",
         "open.wo.cn",
-        "passport.baidu.com",
         "pipe.aria.microsoft.cn",
         "pipe.aria.microsoft.com",
         "web.vortex.data.microsoft.cn",
@@ -39,8 +37,7 @@
         "wosms.cn",
         "wostore.cn",
         "www.msn.cn",
-        "www.msn.com",
-        "zt.baidu.com"
+        "www.msn.com"
       ]
     },
     {
@@ -54,7 +51,6 @@
         ".enrichgw.10010.com",
         ".geetest.com",
         ".hmrz.wo.cn",
-        ".icitymobile.mobi",
         ".id6.me",
         ".mail.wo.cn",
         ".nishub1.10010.com",
