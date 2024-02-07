@@ -18,13 +18,19 @@
   "dns": {
     "servers": [
       {
-        "tag": "proxyDns",
-        "address":  "https://1.1.1.1/dns-query",
+        "tag": "proxy_dns",
+        "address": "https://1.1.1.1/dns-query",
         "detour": "AUTO"
       },
       {
-        "tag": "localDns",
+        "tag": "local_dns",
         "address": "https://223.6.6.6/dns-query",
+        "strategy": "ipv4_only",
+        "detour": "direct"
+      },
+      {
+        "tag": "proxy-server_dns",
+        "address": "223.6.6.6",
         "detour": "direct"
       },
       {
@@ -38,30 +44,29 @@
         "server": "block"
       },
       {
-        "outbound": "any",
-        "server": "localDns",
-        "disable_cache": true
+        "domain_keyword": ["your-server-keyword_1","your-server-keyword_2","your-server-keyword_3"],
+        "server": "proxy-server_dns"
       },
       {
-        "rule_set": "ChinaMax_All",
-        "server": "localDns"
+        "rule_set": ["ChinaMax_All","WeChat.srs"],
+        "server": "local_dns"
       },   
       {
         "clash_mode": "direct",
-        "server": "localDns"
+        "server": "local_dns"
       },
       {
         "clash_mode": "global",
-        "server": "proxyDns"
+        "server": "proxy_dns"
       }
     ],
-    "final": "proxyDns"
+    "final": "proxy_dns"
   },
   "inbounds": [
     {
       "type": "tun",
       "tag": "tun-in",
-      "interface_name": "tun0",
+      "interface_name": "utun0",
       "inet4_address": "172.19.0.1/30",
       "inet6_address": "fdfe:dcba:9876::1/126",
       "mtu": 1500,
