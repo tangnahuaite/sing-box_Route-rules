@@ -25,7 +25,6 @@
       {
         "tag": "local_dns",
         "address": "https://223.6.6.6/dns-query",
-        "strategy": "ipv4_only",
         "detour": "direct"
       },
       {
@@ -69,7 +68,7 @@
       "interface_name": "utun0",
       "inet4_address": "172.19.0.1/30",
       "inet6_address": "fdfe:dcba:9876::1/126",
-      "mtu": 1500,
+      "mtu": 9000,
       "auto_route": true,
       "strict_route": true,
       "sniff": true,
