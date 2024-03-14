@@ -1,0 +1,32 @@
+{
+  "rules": [
+    {
+      "domain": [
+        "googleapis.com",
+        "googleusercontent.com",
+        "gstatic.com",
+        "stun.l.google.com",
+        "stun1.l.google.com",
+        "stun2.l.google.com",
+        "stun3.l.google.com",
+        "stun4.l.google.com",
+        "telephony.goog"
+      ]
+    },
+    {
+      "domain_suffix": [
+        ".googleapis.com",
+        ".googleusercontent.com",
+        ".gstatic.com",
+        ".telephony.goog"
+      ]
+    },
+    {
+      "ip_cidr": [
+        "2001:4860:4864:2::0/64",
+        "74.125.39.0/24"
+      ]
+    }
+  ],
+  "version": 1
+}
