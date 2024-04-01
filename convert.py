@@ -32,17 +32,23 @@ def parse_and_convert_to_dataframe(link):
         try:
             yaml_data = read_yaml_from_url(link)
             rows = []
-            for item in yaml_data.get('payload', []):
+            if not isinstance(yaml_data, str):
+                items = yaml_data.get('payload', [])
+            else:
+                lines = yaml_data.splitlines()
+                line_content = lines[0]
+                items = line_content.split()
+            for item in items:
                 address = item.strip("'")
                 if ',' not in item:
                     if is_ipv4_or_ipv6(item):
                         pattern = 'IP-CIDR'
                     else:
-                        if address.startswith('+'):
+                        if address.startswith('+') or address.startswith('.'):
                             pattern = 'DOMAIN-SUFFIX'
                             address = address[1:]
                             if address.startswith('.'):
-                                address = address[2:]
+                                address = address[1:]
                         else:
                             pattern = 'DOMAIN'
                 else:
