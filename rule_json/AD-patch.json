@@ -30,6 +30,7 @@
         "ntp.msn.com",
         "onedscolprdcus10.centralus.cloudapp.azure.com",
         "open.wo.cn",
+        "passport.baidu.com",
         "pipe.aria.microsoft.cn",
         "pipe.aria.microsoft.com",
         "web.vortex.data.microsoft.cn",
@@ -37,7 +38,13 @@
         "wosms.cn",
         "wostore.cn",
         "www.msn.cn",
-        "www.msn.com"
+        "www.msn.com",
+        "zt.baidu.com"
+      ]
+    },
+    {
+      "domain_keyword": [
+        "saasexch"
       ]
     },
     {
