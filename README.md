@@ -4,8 +4,8 @@ Add ruleset raw links to `source.txt`, Then run `Actions`. Next, you will see th
 
 ---
 
-# sing-box-1.8.0⁺ client configuration file example
+# sing-box-1.10.0⁺ client configuration file example
 
-[Client configuration file example](https://raw.githubusercontent.com/tangnahuaite/sing-box_Route-rules/main/1.8.0⁺example.json)
+[Client configuration file example](https://raw.githubusercontent.com/tangnahuaite/sing-box_Route-rules/main/1.10.0⁺example.json)
 
 ---
