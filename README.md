@@ -7,5 +7,6 @@ Add ruleset raw links to `source.txt`, Then run `Actions`. Next, you will see th
 # sing-box-1.11.0⁺ client configuration file example
 
 [Client configuration file example](https://raw.githubusercontent.com/tangnahuaite/sing-box_Route-rules/main/1.11.0⁺example.json)
-Network_type, network is expensive, network is constrained have been supported since 1.11.0+. Please refer to the sing-box official website for specific field writing.
+
 ---
+Network_type, network is expensive, network is constrained have been supported since 1.11.0+. Please refer to the sing-box official website for specific field writing.
