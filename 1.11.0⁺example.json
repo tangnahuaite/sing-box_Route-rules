@@ -29,7 +29,7 @@
       },
       {
         "tag": "proxy-server_dns",
-        "address": "223.6.6.6",
+        "address": "195.27.1.1",
         "detour": "direct"
       },
       {
@@ -72,22 +72,8 @@
       ],
       "mtu": 9000,
       "auto_route": true,
-      "iproute2_table_index": 2022,
-      "iproute2_rule_index": 9000,
-      "auto_redirect": false,
-      "auto_redirect_input_mark": "0x2023",
-      "auto_redirect_output_mark": "0x2024",
       "strict_route": true,
-      "route_address": [
-        "0.0.0.0/1",
-        "128.0.0.0/1",
-        "::/1",
-        "8000::/1"
-      ],
-      "route_exclude_address": [
-        "192.168.0.0/16",
-        "fc00::/7"
-      ],
+      "stack": "system",
       "platform": {
         "http_proxy": {
           "enabled": true,
@@ -116,14 +102,6 @@
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
       "tolerance": 100
-    },
-    {
-      "tag":"AdBlock",
-      "type":"selector",
-      "outbounds":[
-        "block",
-        "direct"
-      ]
     },
     {
       "tag":"OpenAI",
@@ -219,21 +197,16 @@
     {
       "type": "direct",
       "tag": "direct"
-    },
-    {
-      "type": "dns",
-      "tag": "dns-out"
-    },
-    {
-      "type": "block",
-      "tag": "block"
     }
   ],
   "route": {
     "rules": [
       {
+        "action": "sniff"
+      },
+      {
         "protocol": "dns",
-        "outbound": "dns-out"
+        "action": "hijack-dns"
       },
       {
         "clash_mode": "direct",
@@ -265,7 +238,7 @@
           "id6.me",
           "163yun.com"
         ],
-        "outbound": "AdBlock"
+        "action": "reject"
       },
       {
         "domain_suffix": [
@@ -280,11 +253,11 @@
           ".id6.me",
           ".163yun.com"
         ],
-        "outbound": "AdBlock"
+        "action": "reject"
       },
       {
         "rule_set": "anti-AD.srs",
-        "outbound": "AdBlock"
+        "action": "reject"
       },
       {
         "rule_set": "OpenAI.srs",
