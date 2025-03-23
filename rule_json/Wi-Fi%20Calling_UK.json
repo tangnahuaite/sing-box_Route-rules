@@ -1,0 +1,32 @@
+{
+  "rules": [
+    {
+      "domain": [
+        "entsrv-uk.vodafone.com",
+        "giffgaff.com",
+        "gspe1-ssl.ls.apple.com",
+        "mcc234.pub.3gppnetwork.org",
+        "mcc460.pub.3gppnetwork.org",
+        "vuk-gto.prod.ondemandconnectivity.com"
+      ]
+    },
+    {
+      "domain_suffix": [
+        ".entsrv-uk.vodafone.com",
+        ".giffgaff.com",
+        ".gspe1-ssl.ls.apple.com",
+        ".mcc234.pub.3gppnetwork.org",
+        ".mcc460.pub.3gppnetwork.org",
+        ".vuk-gto.prod.ondemandconnectivity.com"
+      ]
+    },
+    {
+      "ip_cidr": [
+        "46.68.0.0/17",
+        "87.194.0.0/16",
+        "88.82.0.0/19"
+      ]
+    }
+  ],
+  "version": 1
+}
