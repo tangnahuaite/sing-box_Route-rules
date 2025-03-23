@@ -1,5 +1,5 @@
 https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-surge.txt
-https://raw.githubusercontent.com/tangnahuaite/rule_script/main/rule_script/Surge/AD-patch/AD-patch.list
+https://raw.githubusercontent.com/tangnahuaite/rule_script/refs/heads/main/rule_script/Surge/AD-patch/AD-patch.list
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Amazon/Amazon.list
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple_All.list
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/BiliBili/BiliBili.list
@@ -9,8 +9,8 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/eBay/eBay.list
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Facebook/Facebook.list
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Google/Google.list
-https://raw.githubusercontent.com/tangnahuaite/rule_script/main/rule_script/Surge/Google/GoogleFCM.list
-https://raw.githubusercontent.com/tangnahuaite/rule_script/main/rule_script/Surge/Google/GoogleVoice.list
+https://raw.githubusercontent.com/tangnahuaite/rule_script/refs/heads/main/rule_script/Surge/Google/GoogleFCM.list
+https://raw.githubusercontent.com/tangnahuaite/rule_script/refs/heads/main/rule_script/Surge/Google/GoogleVoice.list
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Global/Global_All.list
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/HBO/HBO.list
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Hulu/Hulu.list
@@ -24,6 +24,8 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitter/Twitter.list
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/TikTok/TikTok.list
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/WeChat/WeChat.list
+https://raw.githubusercontent.com/tangnahuaite/rule_script/refs/heads/main/rule_script/Surge/Wi-Fi%20Calling_DE/Wi-Fi%20Calling_DE.list
+https://raw.githubusercontent.com/tangnahuaite/rule_script/refs/heads/main/rule_script/Surge/Wi-Fi%20Calling_UK/Wi-Fi%20Calling_UK.list
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Xbox/Xbox.list
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/YouTube/YouTube.list
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/YouTubeMusic/YouTubeMusic.list
