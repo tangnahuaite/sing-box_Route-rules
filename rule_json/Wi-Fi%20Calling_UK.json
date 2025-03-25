@@ -4,9 +4,7 @@
       "domain": [
         "entsrv-uk.vodafone.com",
         "giffgaff.com",
-        "gspe1-ssl.ls.apple.com",
         "mcc234.pub.3gppnetwork.org",
-        "mcc460.pub.3gppnetwork.org",
         "vuk-gto.prod.ondemandconnectivity.com"
       ]
     },
@@ -14,9 +12,7 @@
       "domain_suffix": [
         ".entsrv-uk.vodafone.com",
         ".giffgaff.com",
-        ".gspe1-ssl.ls.apple.com",
         ".mcc234.pub.3gppnetwork.org",
-        ".mcc460.pub.3gppnetwork.org",
         ".vuk-gto.prod.ondemandconnectivity.com"
       ]
     },

@@ -3,15 +3,13 @@
     {
       "domain": [
         "gspe1-ssl.ls.apple.com",
-        "mcc262.pub.3gppnetwork.org",
-        "mcc460.pub.3gppnetwork.org"
+        "mcc262.pub.3gppnetwork.org"
       ]
     },
     {
       "domain_suffix": [
         ".gspe1-ssl.ls.apple.com",
-        ".mcc262.pub.3gppnetwork.org",
-        ".mcc460.pub.3gppnetwork.org"
+        ".mcc262.pub.3gppnetwork.org"
       ]
     },
     {
