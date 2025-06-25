@@ -4,6 +4,7 @@
       "domain": [
         "entsrv-uk.vodafone.com",
         "giffgaff.com",
+        "ls.apple.com",
         "mcc234.pub.3gppnetwork.org",
         "vuk-gto.prod.ondemandconnectivity.com"
       ]
@@ -12,6 +13,7 @@
       "domain_suffix": [
         ".entsrv-uk.vodafone.com",
         ".giffgaff.com",
+        ".ls.apple.com",
         ".mcc234.pub.3gppnetwork.org",
         ".vuk-gto.prod.ondemandconnectivity.com"
       ]
