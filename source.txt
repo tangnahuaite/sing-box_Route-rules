@@ -1,4 +1,4 @@
-https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-surge.txt
+https://raw.githubusercontent.com/tangnahuaite/AD-domain/refs/heads/main/AD-domain/Surge/AD-domain.list
 https://raw.githubusercontent.com/tangnahuaite/rule_script/refs/heads/main/rule_script/Surge/AD-patch/AD-patch.list
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Apple/Apple_All_No_Resolve.list
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/BiliBili/BiliBili.list
