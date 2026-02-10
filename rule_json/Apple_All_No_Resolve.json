@@ -1645,6 +1645,7 @@
         ".appl.com",
         ".appl4e.com",
         ".appla.com",
+        ".appldnld.apple.com.edgesuite.net",
         ".apple-appstore.cn",
         ".apple-cloudkit.com",
         ".apple-darwin.com",
@@ -3137,6 +3138,9 @@
         "192.35.50.0/24",
         "198.183.17.0/24",
         "205.180.175.0/24",
+        "2403:300::/32",
+        "2620:149::/32",
+        "2a01:b740::/32",
         "63.92.224.0/19",
         "65.199.22.0/23"
       ]
