@@ -7,7 +7,7 @@ import yaml
 import ipaddress
 
 def read_yaml_from_url(url):
-    response = requests.get(url)
+    response = requests.get(url, timeout=30)
     response.raise_for_status()
     yaml_data = yaml.safe_load(response.text)
     return yaml_data
